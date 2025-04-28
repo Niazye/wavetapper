@@ -1,0 +1,21 @@
+#25.4.24
+    Initialize the project.
+    Create the basic file structure of the project.
+    Partially complete:
+        * the basic varibles (such as SIZE, BPM, etc.)
+        * the Cube class.
+        * the json file analyzing.
+        * the main loop.(No content except "quit if QUIT")
+
+#25.4.28
+    Complete the Cube class.(Maybe?)
+        * Draw the normal cube.
+        * Draw the trigger animation.
+        * Trigger the animation.
+    Complete the "Timing" json of "Drums" 's first 4 bars.
+    Complete the main loop.
+        * Include the trigger cubes according to the timing.
+        * Draw the normal cube or triggered cube.
+        * But only the "Drums". Others have no info.
+
+# Continually updating...
