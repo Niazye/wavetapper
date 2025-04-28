@@ -6,7 +6,7 @@ SIZE = 880
 CUBE_SIZE = SIZE / 10
 DOT_SIZE = CUBE_SIZE / 11
 _BACKGROUND_COLOR = pygame.Color("#DDDDDD")
-_TOP_COLOR = pygame.Color("#AAAAAA")
+CUBE_TOP_COLOR = pygame.Color("#AAAAAA")
 BPM = 112
 BEAT_PER_SEC = BPM / 60
 BEAT_PER_MS = BEAT_PER_SEC / 1000
@@ -17,7 +17,6 @@ OFFSET = {
     "left" : [(0, 0), (-math.sqrt(3) / 2, -0.5), (-math.sqrt(3) / 2, 0.5), (0, 1)], #AC
     "right" : [(0, 0), (math.sqrt(3) / 2, -0.5), (math.sqrt(3) / 2, 0.5), (0, 1)]   #CW
 }
-
 
 class Cube:
     def __init__(self, _x, _y, _color, _trigger):
@@ -35,7 +34,7 @@ class Cube:
         pygame.draw.polygon(screen, self.color["shadow"], points)
         for i in range(4):
             points[i] = (self.x + CUBE_SIZE * OFFSET["top"][i][0], self.y + CUBE_SIZE * OFFSET["top"][i][1]);
-        pygame.draw.polygon(screen, _TOP_COLOR, points)
+        pygame.draw.polygon(screen, CUBE_TOP_COLOR, points)
     def trigger(self, screen, _type):
         _dots = self.animation[_type]["dots"]
         _face = self.animation[_type]["face"]
@@ -105,7 +104,7 @@ while Running:
         cube.draw(screen)
     trigger_remain_beats = [max(0, x - times * BEAT16_PER_MS) for x in trigger_remain_beats]
     beat_waiting_beats = [max(0, x - times * BEAT16_PER_MS) for x in beat_waiting_beats]
-    for i in range(1):
+    for i in range(2):
         if trigger_remain_beats[i] > 0:
             cubes[i].trigger(screen, timings[i][currents[i]]["type"])
         if beat_waiting_beats[i] <= 0:
