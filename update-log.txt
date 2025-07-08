@@ -18,4 +18,6 @@
         * Draw the normal cube or triggered cube.
         * But only the "Drums". Others have no info.
 
+#25.5.10
+    Add some tones' color info to the cube_info.json.
 # Continually updating...
